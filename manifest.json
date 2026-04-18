@@ -1,0 +1,18 @@
+{
+  "name": "RCPL Equipment QC & Dispatch",
+  "short_name": "RCPL QC",
+  "description": "Rigsar Construction — Equipment Maintenance Division. Job Card, QC, Dispatch and Site Handover for heavy equipment fleet.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#131313",
+  "theme_color": "#FBB042",
+  "lang": "en",
+  "icons": [
+    { "src": "./icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./icons/icon-512-maskable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "categories": ["productivity", "business"]
+}
