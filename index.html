@@ -73,6 +73,11 @@
     </div>
     <div class="fg"><label>Inspector / Mechanic</label><input type="text" id="qc-inspector" placeholder="Auto-filled from sign-in"/></div>
   </div>
+  <div class="frow3">
+    <div class="fg"><label>Operator / Driver Name</label><input type="text" id="qc-operator" placeholder="e.g. Tenzin Wangchuk"/></div>
+    <div class="fg"><label>Operator Contact No.</label><input type="tel" id="qc-operator-contact" placeholder="e.g. 17123456"/></div>
+    <div class="fg"><label>Repaired By (Mechanic)</label><input type="text" id="qc-repaired-by" placeholder="Mechanic who did the work"/></div>
+  </div>
   <div class="btn-row" style="margin-top:4px;margin-bottom:8px;">
     <button class="btn" onclick="rcpl.autoFillQcRef()">Auto-generate Ref</button>
   </div>
@@ -88,6 +93,12 @@
     <button class="eq-tab" onclick="showEq('pump')">Concrete Pump</button>
     <button class="eq-tab" onclick="showEq('comp')">Compactor</button>
     <button class="eq-tab" onclick="showEq('tipper')">Tipper / Truck</button>
+    <button class="eq-tab" onclick="showEq('wl')">Wheel Loader</button>
+    <button class="eq-tab" onclick="showEq('paver')">Paver</button>
+    <button class="eq-tab" onclick="showEq('shot')">Shotcrete</button>
+    <button class="eq-tab" onclick="showEq('tanker')">Fuel Tanker</button>
+    <button class="eq-tab" onclick="showEq('muck')">Muck Loader</button>
+    <button class="eq-tab" onclick="showEq('lv')">Light Vehicle</button>
   </div>
 
   <!-- EXCAVATOR -->
@@ -581,6 +592,341 @@
       <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
     </div>
     <div class="fg" style="margin-bottom:10px"><label>Remarks</label><textarea placeholder="Tyre measurements, brake lining thickness, pending items, route restrictions..."></textarea></div>
+  </div>
+
+  <!-- WHEEL LOADER -->
+  <div id="eq-wl" class="eq-panel">
+    <div class="sec">Engine & Cooling — Wheel Loader</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Fluids & Filters</h4>
+        <div class="ci"><input type="checkbox"/><span>Engine oil level & condition</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Coolant level & concentration</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fuel level, no tank/line leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Air filter — clean, restriction indicator OK</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>No active fault codes (ECM)</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Exhaust — no black/white/blue smoke</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Transmission & Axles</h4>
+        <div class="ci"><input type="checkbox"/><span>Transmission oil level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Differential oil — front & rear</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Axle seals — no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Torque converter — no abnormal noise</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All driveshaft bolts tight</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Hydraulics, Bucket & Tyres</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Hydraulic System</h4>
+        <div class="ci"><input type="checkbox"/><span>Hydraulic oil level — sight glass OK</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All hoses — no chafe, cracks, leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Lift cylinder seals — no weep</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tilt cylinder — no leak</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Bucket pins & bushings — greased, no excess play</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Bucket cutting edge — wear checked</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Tyres & Brakes</h4>
+        <div class="ci"><input type="checkbox"/><span>Tyre pressure — all 4 checked & set</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tyre condition — no cuts, chunking</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Service brake — tested, holds on grade</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Parking brake — tested, holds</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Steering articulation — free, no binding</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Cab & Safety</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Cab & Controls</h4>
+        <div class="ci"><input type="checkbox"/><span>All gauges — fuel, temp, oil press</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>No warning lamps on cluster</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Horn — tested & audible</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Backup alarm — working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All lights — front & rear functional</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fire extinguisher — charged, mounted</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Seatbelt — serviceable</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>ROPS structure — no damage</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div id="wl-score" class="score-bar">
+      <span class="score-num" id="wl-pct">0%</span>
+      <div style="flex:1"><div style="font-size:11px;color:#888;margin-bottom:4px">Checks completed</div>
+      <div class="score-track"><div class="score-fill" id="wl-fill" style="width:0%"></div></div></div>
+      <span id="wl-badge" class="badge-warn">Pending</span>
+    </div>
+    <div class="res-row">
+      <div class="fg"><label>Overall QC Result</label><select><option>— Select —</option><option>PASS</option><option>CONDITIONAL PASS</option><option>FAIL</option></select></div>
+      <div class="fg"><label>QC Inspector</label><input type="text" placeholder="Name + date"/></div>
+      <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
+    </div>
+    <div class="fg" style="margin-bottom:10px"><label>Remarks / Pending Items</label><textarea placeholder="Document all Monitor items — must be briefed to site supervisor."></textarea></div>
+  </div>
+
+  <!-- PAVER -->
+  <div id="eq-paver" class="eq-panel">
+    <div class="sec">Engine & Drive — Paver</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Engine</h4>
+        <div class="ci"><input type="checkbox"/><span>Engine oil level & condition</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Coolant level & concentration</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Air filter condition</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fuel level, no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>No active fault codes</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Exhaust — no black/white/blue smoke</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Auger & Conveyor</h4>
+        <div class="ci"><input type="checkbox"/><span>Conveyor chains — tension & wear OK</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Auger sections — no damage</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Auger flights — wear checked</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Conveyor drives — no abnormal noise</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Hopper — no cracks or deformation</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Screed & Hydraulics</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Screed System</h4>
+        <div class="ci"><input type="checkbox"/><span>Screed extension plates — free movement</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tamper bar — wear & alignment OK</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Screed heat elements — all working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Gas/LPG system — no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Screed crown adjustment — functional</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Screed depth / slope controls — tested</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Hydraulics & Safety</h4>
+        <div class="ci"><input type="checkbox"/><span>Hydraulic oil level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All hoses — no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All controls — functional</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Emergency stop — tested</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fire extinguisher — charged</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All guards in place</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div id="paver-score" class="score-bar">
+      <span class="score-num" id="paver-pct">0%</span>
+      <div style="flex:1"><div style="font-size:11px;color:#888;margin-bottom:4px">Checks completed</div>
+      <div class="score-track"><div class="score-fill" id="paver-fill" style="width:0%"></div></div></div>
+      <span id="paver-badge" class="badge-warn">Pending</span>
+    </div>
+    <div class="res-row">
+      <div class="fg"><label>Overall QC Result</label><select><option>— Select —</option><option>PASS</option><option>CONDITIONAL PASS</option><option>FAIL</option></select></div>
+      <div class="fg"><label>QC Inspector</label><input type="text" placeholder="Name + date"/></div>
+      <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
+    </div>
+    <div class="fg" style="margin-bottom:10px"><label>Remarks / Pending Items</label><textarea placeholder="Document all Monitor items — must be briefed to site supervisor."></textarea></div>
+  </div>
+
+  <!-- SHOTCRETE MACHINE -->
+  <div id="eq-shot" class="eq-panel">
+    <div class="sec">Pump & Delivery System — Shotcrete Machine</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Concrete Pump</h4>
+        <div class="ci"><input type="checkbox"/><span>Pump cylinders — seals OK, no bypass</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Delivery pipe — no wear, cracks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Couplings & clamps — all tight</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>S-valve / rock valve — serviceable</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Wear plate & ring — within limit</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Nozzle — clear, not blocked</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Accelerator System</h4>
+        <div class="ci"><input type="checkbox"/><span>Dosing pump — calibrated</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Hose connections — tight, no leak</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Accelerator tank — no leak</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Flow rate — set to spec</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Air System & Hydraulics</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Air Compressor</h4>
+        <div class="ci"><input type="checkbox"/><span>Compressor oil level, no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Air pressure — within spec</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Water separator — drained</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Air hoses — no damage, tight</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Hydraulics & Safety</h4>
+        <div class="ci"><input type="checkbox"/><span>Hydraulic oil level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All hoses — no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Boom (if fitted) — full range of movement</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Emergency stop — tested</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Pressure relief valves — set correctly</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All guards in place</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div id="shot-score" class="score-bar">
+      <span class="score-num" id="shot-pct">0%</span>
+      <div style="flex:1"><div style="font-size:11px;color:#888;margin-bottom:4px">Checks completed</div>
+      <div class="score-track"><div class="score-fill" id="shot-fill" style="width:0%"></div></div></div>
+      <span id="shot-badge" class="badge-warn">Pending</span>
+    </div>
+    <div class="res-row">
+      <div class="fg"><label>Overall QC Result</label><select><option>— Select —</option><option>PASS</option><option>CONDITIONAL PASS</option><option>FAIL</option></select></div>
+      <div class="fg"><label>QC Inspector</label><input type="text" placeholder="Name + date"/></div>
+      <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
+    </div>
+    <div class="fg" style="margin-bottom:10px"><label>Remarks / Pending Items</label><textarea placeholder="Document all Monitor items — must be briefed to site supervisor."></textarea></div>
+  </div>
+
+  <!-- FUEL TANKER -->
+  <div id="eq-tanker" class="eq-panel">
+    <div class="sec">Engine & Chassis — Fuel Tanker</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Engine & Running Gear</h4>
+        <div class="ci"><input type="checkbox"/><span>Engine oil level & condition</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Coolant level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tyre pressure — all checked</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Brake system — tested, holds</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All lights — head, tail, indicators</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Horn — working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Tank & Pump System</h4>
+        <div class="ci"><input type="checkbox"/><span>Tank integrity — no dents, cracks, leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All valves — no leaks, close fully</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fuel pump — no leak, primes correctly</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Flow meter — calibrated & working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Hose reel — no damage, rewinds fully</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Nozzle & trigger — auto shut-off works</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Safety & Compliance</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Fire & Spill Safety</h4>
+        <div class="ci"><input type="checkbox"/><span>Fire extinguisher min 2×9kg — charged</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Spill kit — onboard & complete</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Earthing / bonding cable — present</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Emergency shut-off valve — tested</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>No smoking sign — visible</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Hazmat placard — fitted & correct</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Driver ADG endorsement — valid</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div id="tanker-score" class="score-bar">
+      <span class="score-num" id="tanker-pct">0%</span>
+      <div style="flex:1"><div style="font-size:11px;color:#888;margin-bottom:4px">Checks completed</div>
+      <div class="score-track"><div class="score-fill" id="tanker-fill" style="width:0%"></div></div></div>
+      <span id="tanker-badge" class="badge-warn">Pending</span>
+    </div>
+    <div class="res-row">
+      <div class="fg"><label>Overall QC Result</label><select><option>— Select —</option><option>PASS</option><option>CONDITIONAL PASS</option><option>FAIL</option></select></div>
+      <div class="fg"><label>QC Inspector</label><input type="text" placeholder="Name + date"/></div>
+      <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
+    </div>
+    <div class="fg" style="margin-bottom:10px"><label>Remarks / Pending Items</label><textarea placeholder="Document all Monitor items — must be briefed to site supervisor."></textarea></div>
+  </div>
+
+  <!-- MUCK LOADER -->
+  <div id="eq-muck" class="eq-panel">
+    <div class="sec">Engine & Cooling — Muck Loader</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Engine</h4>
+        <div class="ci"><input type="checkbox"/><span>Engine oil level & condition</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Coolant level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Air filter condition</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fuel level, no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>No active fault codes</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Exhaust — no abnormal smoke</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Loading System</h4>
+        <div class="ci"><input type="checkbox"/><span>Bucket & teeth — wear checked</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Lift arms — no cracks or deformation</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tipping mechanism — full cycle tested</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Bucket pins & bushings — greased</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Tyres, Hydraulics & Safety</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Tyres & Steering</h4>
+        <div class="ci"><input type="checkbox"/><span>Tyre pressure — all checked & set</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tyre condition — no cuts or damage</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Steering articulation — free, no binding</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Brake system — tested & holds</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Hydraulics & Safety</h4>
+        <div class="ci"><input type="checkbox"/><span>Hydraulic oil level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All hoses — no leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>ROPS — no damage</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Seatbelt — serviceable</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Horn & backup alarm — working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>All lights — functional</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fire extinguisher — charged</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div id="muck-score" class="score-bar">
+      <span class="score-num" id="muck-pct">0%</span>
+      <div style="flex:1"><div style="font-size:11px;color:#888;margin-bottom:4px">Checks completed</div>
+      <div class="score-track"><div class="score-fill" id="muck-fill" style="width:0%"></div></div></div>
+      <span id="muck-badge" class="badge-warn">Pending</span>
+    </div>
+    <div class="res-row">
+      <div class="fg"><label>Overall QC Result</label><select><option>— Select —</option><option>PASS</option><option>CONDITIONAL PASS</option><option>FAIL</option></select></div>
+      <div class="fg"><label>QC Inspector</label><input type="text" placeholder="Name + date"/></div>
+      <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
+    </div>
+    <div class="fg" style="margin-bottom:10px"><label>Remarks / Pending Items</label><textarea placeholder="Document all Monitor items — must be briefed to site supervisor."></textarea></div>
+  </div>
+
+  <!-- LIGHT VEHICLE -->
+  <div id="eq-lv" class="eq-panel">
+    <div class="sec">Engine & Fluids — Light Vehicle</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Fluids</h4>
+        <div class="ci"><input type="checkbox"/><span>Engine oil level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Coolant level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Brake fluid level</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Power steering fluid</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Windscreen washer fluid</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>No fuel leaks</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Tyres & Brakes</h4>
+        <div class="ci"><input type="checkbox"/><span>Tyre pressure — all 4 + spare</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tyre condition — tread & sidewall</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Wheel nuts tight</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Service brake — tested & responsive</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Handbrake — holds on slope</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div class="sec">Lights, Safety Equipment & Documents</div>
+    <div class="cl-grid">
+      <div class="cl-group"><h4>Lights & Electrical</h4>
+        <div class="ci"><input type="checkbox"/><span>Headlights — main & high beam</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Tail lights & brake lights</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Indicators — all 4 working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Reverse lights</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Hazard lights</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Horn — working</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Battery — secure, terminals tight</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+      <div class="cl-group"><h4>Safety Equipment</h4>
+        <div class="ci"><input type="checkbox"/><span>All seatbelts — serviceable</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Fire extinguisher — onboard & charged</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>First aid kit — complete</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Warning triangles / flares</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Hi-vis vests — minimum 2</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Vehicle registration — in vehicle</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+        <div class="ci"><input type="checkbox"/><span>Driver's license — valid class</span><select><option>—</option><option>OK</option><option>Mon</option><option>Fail</option></select></div>
+      </div>
+    </div>
+    <div id="lv-score" class="score-bar">
+      <span class="score-num" id="lv-pct">0%</span>
+      <div style="flex:1"><div style="font-size:11px;color:#888;margin-bottom:4px">Checks completed</div>
+      <div class="score-track"><div class="score-fill" id="lv-fill" style="width:0%"></div></div></div>
+      <span id="lv-badge" class="badge-warn">Pending</span>
+    </div>
+    <div class="res-row">
+      <div class="fg"><label>Overall QC Result</label><select><option>— Select —</option><option>PASS</option><option>CONDITIONAL PASS</option><option>FAIL</option></select></div>
+      <div class="fg"><label>QC Inspector</label><input type="text" placeholder="Name + date"/></div>
+      <div class="fg"><label>Div. Manager Approved</label><input type="text" placeholder="Name + date"/></div>
+    </div>
+    <div class="fg" style="margin-bottom:10px"><label>Remarks / Pending Items</label><textarea placeholder="Document all Monitor items — must be briefed to site supervisor."></textarea></div>
+  </div>
+
+  <!-- DOCUMENTS CHECK (all equipment) -->
+  <div class="sec" style="margin-top:16px;">Documents Check</div>
+  <div class="info">Verify all documents before dispatch. Any missing document = DO NOT DISPATCH.</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px;">
+    <div class="ci"><input type="checkbox"/><span>Equipment Registration / Blue Book</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>Insurance Certificate — valid & current</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>Fitness / Roadworthiness Certificate</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>Road / Route Permit (if required)</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>Operator / Driver License — valid class</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>Third Party Insurance</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>Operator Manual in cab/vehicle</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
+    <div class="ci"><input type="checkbox"/><span>QC Sheet copy — to go with machine</span><select><option>—</option><option>OK</option><option>Fail</option></select></div>
   </div>
 
   <div class="btn-row">
