@@ -1,6 +1,7 @@
 import { FIREBASE_READY } from "./firebase-config.js";
 import { currentUser, login, signOut, bootstrapAuth } from "./auth.js";
 import { saveQC, bindScoreUpdates } from "./qc.js";
+import { downloadQCPdf } from "./pdf.js";
 import { saveDispatch } from "./dispatch.js";
 import { startTracker, setFilter, refreshLocalTracker } from "./tracker.js";
 import {
@@ -171,6 +172,9 @@ const rcpl = {
     goTo("qc");
   },
   setFilter,
+  downloadPdf: () => {
+    try { downloadQCPdf(); } catch (e) { toast(e.message || "PDF failed", "error"); }
+  },
 };
 
 // Expose to inline onclick handlers in index.html.
