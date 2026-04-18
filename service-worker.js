@@ -1,4 +1,4 @@
-const CACHE = "rcpl-qc-v1";
+const CACHE = "rcpl-qc-v2";
 const SHELL = [
   "./",
   "./index.html",
